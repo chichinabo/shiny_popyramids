@@ -1,7 +1,7 @@
-library("epade")
+require("epade")
 # Plot logos on the pyramid
-library("png")
-library("grid")
+require("png")
+require("grid")
 
 mars_path<-file.path("./ui/images/mars.png")
 venus_path<-file.path("./ui/images/venus.png")
