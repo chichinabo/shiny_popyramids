@@ -1,4 +1,8 @@
-library("epade")
+
+require("epade")
+# Plot logos on the pyramid
+require("png")
+require("grid")
 
 chibo_path<-file.path("./ui/images/chibo.png")
 
