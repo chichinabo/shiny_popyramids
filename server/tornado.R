@@ -1,3 +1,4 @@
+require("RCurl")
 require("epade")
 # Plot logos on the pyramid
 require("png")
@@ -8,10 +9,10 @@ venus_path<-file.path("https://raw.githubusercontent.com/chichinabo/popyramids_r
 chibo_path<-file.path("https://raw.githubusercontent.com/chichinabo/popyramids_resources/master/ui/images/chibo.png")
 chibo_percent_path<-file.path("https://raw.githubusercontent.com/chichinabo/popyramids_resources/master/ui/images/chibo_percent.png")
 
-mars_icon <- readPNG(mars_path)
-venus_icon <- readPNG(venus_path)
-chibo_icon <- readPNG(chibo_path)
-chibo_percent_icon <- readPNG(chibo_percent_path)
+mars_icon <- readPNG(getURLContent(mars_path))
+venus_icon <- readPNG(getURLContent(venus_path))
+chibo_icon <- readPNG(getURLContent(chibo_path))
+chibo_percent_icon <- readPNG(getURLContent(chibo_percent_path))
 
 ############################ Retrieve app statistics ############################
 ## TODO: We need to modify this function for plotting multivariable pyramids
