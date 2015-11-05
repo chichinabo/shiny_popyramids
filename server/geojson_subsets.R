@@ -28,7 +28,7 @@ geojson_multipolygons<-function(geojson){
   multipolygons<-geojson
   
   for(i in 1:length(multipolygons$features)){
-    geojson$features[[i]]$geometry$geometries[[1]]
+    subset<-geojson$features[[i]]$geometry$geometries[[1]]
     multipolygons$features[[i]]$geometry<-subset
   }
   
