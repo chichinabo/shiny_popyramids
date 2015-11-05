@@ -25,23 +25,12 @@ geojson_points<-function(geojson){
 # Get a multipolygons vector from the RJSONIO list structures
 #TODO: This should be for any number of geometries. Now it is 5 because of the "Give me five" Shiny app
 geojson_multipolygons<-function(geojson){
-  
   multipolygons<-geojson
   
-  subset<-geojson$features[[1]]$geometry$geometries[[1]]
-  multipolygons$features[[1]]$geometry<-subset
-  
-  subset<-geojson$features[[2]]$geometry$geometries[[1]]
-  multipolygons$features[[2]]$geometry<-subset
-  
-  subset<-geojson$features[[3]]$geometry$geometries[[1]]
-  multipolygons$features[[3]]$geometry<-subset
-  
-  subset<-geojson$features[[4]]$geometry$geometries[[1]]
-  multipolygons$features[[4]]$geometry<-subset
-  
-  subset<-geojson$features[[5]]$geometry$geometries[[1]]
-  multipolygons$features[[5]]$geometry<-subset
+  for(i in 1:length(multipolygons$features)){
+    geojson$features[[i]]$geometry$geometries[[1]]
+    multipolygons$features[[i]]$geometry<-subset
+  }
   
   multipolygons
 }
