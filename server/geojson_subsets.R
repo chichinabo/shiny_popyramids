@@ -1,4 +1,5 @@
-
+# Get a points vector from the RJSONIO list structures
+#TODO: This should be for any number of geometries. Now it is 5 because of the "Give me five" Shiny app
 geojson_points<-function(geojson){
   
   points<-geojson
@@ -21,7 +22,8 @@ geojson_points<-function(geojson){
   points
 }
 
-
+# Get a multipolygons vector from the RJSONIO list structures
+#TODO: This should be for any number of geometries. Now it is 5 because of the "Give me five" Shiny app
 geojson_multipolygons<-function(geojson){
   
   multipolygons<-geojson
@@ -44,6 +46,7 @@ geojson_multipolygons<-function(geojson){
   multipolygons
 }
 
+# Get a properties dataframe from the RJSONIO list structures
 geojson_properties<-function(geojson){
     longitude <- sapply(geojson$features, function(feat) {
       feat$geometry$geometries[[2]]$coordinates[1]
