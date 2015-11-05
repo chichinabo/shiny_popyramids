@@ -1,29 +1,18 @@
+#TODO: These functions could be improved and scaled by using nested apply functions
+
 # Get a points vector from the RJSONIO list structures
-#TODO: This should be for any number of geometries. Now it is 5 because of the "Give me five" Shiny app
 geojson_points<-function(geojson){
-  
   points<-geojson
   
-  subset<-geojson$features[[1]]$geometry$geometries[[2]]
-  points$features[[1]]$geometry<-subset
-  
-  subset<-geojson$features[[2]]$geometry$geometries[[2]]
-  points$features[[2]]$geometry<-subset
-  
-  subset<-geojson$features[[3]]$geometry$geometries[[2]]
-  points$features[[3]]$geometry<-subset
-  
-  subset<-geojson$features[[4]]$geometry$geometries[[2]]
-  points$features[[4]]$geometry<-subset
-  
-  subset<-geojson$features[[5]]$geometry$geometries[[2]]
-  points$features[[5]]$geometry<-subset
+  for(i in 1:length(points$features)){
+    subset<-geojson$features[[i]]$geometry$geometries[[2]]
+    points$features[[i]]$geometry<-subset
+  }
   
   points
 }
 
 # Get a multipolygons vector from the RJSONIO list structures
-#TODO: This should be for any number of geometries. Now it is 5 because of the "Give me five" Shiny app
 geojson_multipolygons<-function(geojson){
   multipolygons<-geojson
   
