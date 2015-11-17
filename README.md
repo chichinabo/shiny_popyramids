@@ -8,7 +8,9 @@ Download and unzip this project into your Shiny app folder:
 
         curl 
         unzip
+Add permisions for installing new R packages on the fly:
 
+        chmod...
 Change the dummy values in the pgconnection.R file to your database parameters:
 
         global_user<-"user"
