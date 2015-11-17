@@ -1,0 +1,5 @@
+global_user<-"chibo"
+global_password<-"chibo"
+global_host<-"aulageomatica.ua.es"
+global_port<-"5432"
+global_dbname<-"chibo_pyramids"
