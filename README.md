@@ -8,8 +8,11 @@ Download and unzip this project into your Shiny app folder:
 
         curl 
         unzip
-        
+
 Install library libpq-dev
+        apt-get update
+        apt-get install libpq-dev
+
 
 Add permisions for installing new R packages on the fly:
 
