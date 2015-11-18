@@ -25,8 +25,9 @@ server <- function(input, output, session) {
 ##This updates the main map
 observeEvent(c(input$whose_provider, input$what_project, input$main_map_bounds, input$when_range, input$yscale, input$xscale),{
   
-  if (is.null(input$main_map_bounds)){return()}#When the app is started, no map bounds are still available
+  if (is.null(input$main_map_bounds)){return()}#CHECK: When the app is started, no map bounds are still available
   geojson<-reactive_pyramids()
+  if (is.null(geojson$features)){return()}#CHECK: When there are no features back, don't do anything
   
   df<-geojson_properties(geojson)
   multipolygons<-geojson_multipolygons(geojson)
@@ -38,15 +39,16 @@ observeEvent(c(input$whose_provider, input$what_project, input$main_map_bounds, 
     addGeoJSON(multipolygons, group = "Boundaries")%>%
     addMarkers(
       data=df,
-      icon = pyramidIcons[df$what_shape],
-      popup=df$how_popup_html_long)
+      icon = pyramidIcons[df$what_shape])
 })
   
   ##Plot pyramids
   output$pyramid <- renderPlot({
   
-    if (is.null(input$main_map_bounds)){return()}#When the app is started, no map bounds are still available
+    if (is.null(input$main_map_bounds)){return()}#CHECK: When the app is started, no map bounds are still available
     geojson <- reactive_pyramids()
+    if (is.null(geojson$features)){return()}#CHECK: When there are no features back, don't do anything
+    
     
     if(length(geojson$features)>0){
       plot_pyramid(geojson$features[[1]])
@@ -59,8 +61,10 @@ observeEvent(c(input$whose_provider, input$what_project, input$main_map_bounds, 
 # Reactive expression to compose a data frame containing all the values
 pyramidValues <- reactive({
   
-  if (is.null(input$main_map_bounds)){return()}#When the app is started, no map bounds are still available
+  if (is.null(input$main_map_bounds)){return()}#CHECK: When the app is started, no map bounds are still available
   geojson <- reactive_pyramids()
+  if (is.null(geojson$features)){return()}#CHECK: When there are no features back, don't do anything
+  
   df<-geojson_properties(geojson)
   
   df<-df[,-ncol(df)]#Remove las n cols that contain ui data

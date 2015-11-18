@@ -26,6 +26,8 @@ server <- function(input, output, session) {
     
     if (is.null(input$main_map_bounds)){return()}#When the app is started, no map bounds are still available
     geojson <- reactive_pyramids()
+    if (is.null(geojson$features)){return()}#CHECK: When there are no features back, don't do anything
+    
     df<-geojson_properties(geojson)
     
 
