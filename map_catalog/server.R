@@ -25,13 +25,13 @@ server <- function(input, output, session) {
   #Get the selected reactive pyramid from leaflet map
   reactive_pyramid<-eventReactive(c(input$whose_provider, input$what_project, input$main_map_marker_click, input$when_range, input$yscale, input$xscale), {
 
-    click<<-input$main_map_marker_click
+    click<-input$main_map_marker_click
     pids<-click$id
-    pid<<-as.data.frame(pids)
+    pid<-as.data.frame(pids)
 
-    pyramids <<- get_pyramids(pid, input$yscale, input$xscale)
+    pyramids <- get_pyramids(pid, input$yscale, input$xscale)
     
-    geojson<<-RJSONIO::fromJSON(pyramids$pyramids)
+    geojson<-RJSONIO::fromJSON(pyramids$pyramids)
     
     geojson
   })
