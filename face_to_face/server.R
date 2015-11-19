@@ -6,7 +6,7 @@ server <- function(input, output, session) {
       # Base groups
       addProviderTiles("CartoDB.Positron", group = "Positron", options = providerTileOptions(noWrap = TRUE))%>%
       
-      fitBounds(-5,28,0,44)#Spain
+      fitBounds(initial_lng1,initial_lat1,initial_lng2,initial_lat2)#Spain
     
     main_map_a
   })

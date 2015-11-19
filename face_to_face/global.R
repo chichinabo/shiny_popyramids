@@ -1,6 +1,8 @@
 ######### LOAD PUBLIC SOURCES FROM popyramids_resources-master
 source("../resources/auto_check_and_install.R")
 
+source("../initial_bounds.R")
+
 source("../resources/geojson_subsets.R")
 source("../resources/leaflet_icon_list.R" )
 
