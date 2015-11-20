@@ -9,7 +9,7 @@ source("../resources/leaflet_icon_list.R" )
 source("../resources/mtexti.R")
 source("../resources/tornado.R")
 
-source("../resources/pgconnection.R" )
+source("../pgconnection.R" )
 source("../resources/pgqueries.R" )
 
 
