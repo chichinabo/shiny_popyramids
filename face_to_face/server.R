@@ -118,6 +118,47 @@ observeEvent(c(input$whose_provider_a, input$what_project_a, input$main_map_a_bo
       plot_pyramid_empty()
     }
   })
+  
+  
+  # Reactive expression to compose a data frame containing all the values of pyramid A
+  pyramidValuesA <- reactive({
+    
+    if (is.null(input$main_map_a_bounds)){return()}#CHECK: When the app is started, no map bounds are still available
+    geojson <- reactive_pyramids_a()
+    if (is.null(geojson$features)){return()}#CHECK: When there are no features back, don't do anything
+    
+    df<-geojson_properties(geojson)
+    
+    df<-df[,-ncol(df)]#Remove las n cols that contain ui data
+    
+  })
+  
+  
+  # Show the A values using an HTML table
+  output$values_a <- renderTable({
+    t(pyramidValuesA())
+  })
+  
+  
+  # Reactive expression to compose a data frame containing all the values of pyramid B
+  pyramidValuesB <- reactive({
+    
+    if (is.null(input$main_map_b_bounds)){return()}#CHECK: When the app is started, no map bounds are still available
+    geojson <- reactive_pyramids_a()
+    if (is.null(geojson$features)){return()}#CHECK: When there are no features back, don't do anything
+    
+    df<-geojson_properties(geojson)
+    
+    df<-df[,-ncol(df)]#Remove las n cols that contain ui data
+    
+  })
+  
+  
+  # Show the B values using an HTML table
+  output$values_b <- renderTable({
+    t(pyramidValuesB())
+  })
+  
 
   
 }
