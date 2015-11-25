@@ -1,5 +1,5 @@
 global_user<-"chibo" 
 global_password<-"chibo" 
-global_host<-"localhost" 
+global_host<- "localhost"
 global_port<-"5432" 
 global_dbname<-"chibo_pyramids"
