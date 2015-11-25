@@ -49,9 +49,6 @@ plot_pyramid<- function(feature){
   mtext("popyramids.chichinabo.org", 1, line=4, adj=0, cex=.8, col="gray")
   mtext(paste("PID:",pid), 1, line=4, adj=1.0, cex=.8, col="gray")
   
-   
-  ##Summary data
-  mtext(text = paste("Total:", format(pop.total, big.mark=",", scientific=FALSE)),side = 3, line=-3, adj=0.9, cex=1, col="black")  
   
   grid.raster(mars_icon,height = 0.05,interpolate = TRUE,x = 0.25, y = 0.85,just = "right")
   grid.raster(venus_icon,height = 0.05,interpolate = TRUE,x = 0.75, y = 0.85,just = "left")
