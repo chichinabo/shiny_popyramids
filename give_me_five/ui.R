@@ -18,12 +18,6 @@ ui<-dashboardPage(
                selectInput(inputId="xscale",label='X-Scale:',
                            choices = list("Habs." = "false", "Perc. (%)" = "true"), 
                            selected = 1)
-      ),
-      menuItem("Info", icon=icon("info"), tabName = "info",
-               menuSubItem("Blog", icon=icon("book"), href = "http://www.gisandchips.org/"),
-               menuSubItem("Twitter", icon=icon("twitter-square"), href = "https://twitter.com/gisandchips"),
-               menuSubItem("Facebook", icon=icon("facebook-square"), href = "https://twitter.com/gisandchips")
-               
       )
     )
   ),
@@ -44,8 +38,7 @@ ui<-dashboardPage(
                        box(width = 12, plotOutput("pyramid5"))
                 )
               )
-      ),
-      tabItem("blog")
+      )
     )
   )
 )

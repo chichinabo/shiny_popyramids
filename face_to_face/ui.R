@@ -30,12 +30,6 @@ ui<-dashboardPage(
                selectInput(inputId="xscale_b",label='X-Scale:',
                            choices = list("Habs." = "false", "Perc. (%)" = "true"), 
                            selected = "true")
-      ),
-      menuItem("Info", icon=icon("info"), tabName = "info",
-               menuSubItem("Blog", icon=icon("book"), href = "http://www.gisandchips.org/"),
-               menuSubItem("Twitter", icon=icon("twitter-square"), href = "https://twitter.com/gisandchips"),
-               menuSubItem("Facebook", icon=icon("facebook-square"), href = "https://twitter.com/gisandchips")
-               
       )
     )
   ),
@@ -73,8 +67,7 @@ ui<-dashboardPage(
                        )
                 )
               )
-      ),
-      tabItem("blog")
+      )
     )
   )
 )
