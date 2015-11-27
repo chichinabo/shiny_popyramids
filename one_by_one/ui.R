@@ -25,17 +25,20 @@ ui<-dashboardPage(
     tabItems(
       tabItem("dashboard",
               fluidRow(
-                column(width = 6,
+                column(width = 8,
                        box(width=12,
-                           leafletOutput("main_map")
+                           leafletOutput("mapA")
                        )
                 ),
-                column(width = 6,
-                       tabsetPanel(type = "tabs", 
-                                   tabPanel("Plot", plotOutput("pyramid")), 
-                                   tabPanel("Table", br(), tableOutput("values"))
-                                   
+                column(width = 4,
+                       box(width = 12,
+                         tabsetPanel(type = "tabs", 
+                                     tabPanel("Plot", plotOutput("pyramid")), 
+                                     tabPanel("Table", br(), tableOutput("values"))
+                                     
+                         )
                        )
+                       
                 )
               )
       )

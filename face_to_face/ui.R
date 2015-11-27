@@ -39,12 +39,12 @@ ui<-dashboardPage(
               fluidRow(
                 column(width = 6,
                        box(width=12,
-                           leafletOutput("main_map_a")
+                           leafletOutput("mapA")
                        )
                 ),
                 column(width = 6,
                        box(width=12,
-                           leafletOutput("main_map_b")
+                           leafletOutput("mapB")
                        )
                 )
               )

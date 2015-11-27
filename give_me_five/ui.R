@@ -26,7 +26,7 @@ ui<-dashboardPage(
       tabItem("dashboard",
               fluidRow(
                 column(width = 4,
-                       box(width = 12,leafletOutput("main_map")),
+                       box(width = 12,leafletOutput("mapA")),
                        box(width = 12, plotOutput("pyramid1"))
                 ),
                 column(width = 4,
