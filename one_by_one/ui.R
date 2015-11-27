@@ -6,7 +6,7 @@ ui<-dashboardPage(
   dashboardSidebar(
     
     sidebarMenu(
-      menuItem("Dashboard", icon=icon("dashboard"), tabName = "dashboard"),
+      menuItem("App", icon=icon("dashboard"), tabName = "dashboard"),
       menuItem("Filters", icon=icon("filter"), tabName = "filters",
                selectInput(inputId="whose_provider", label="whose_provider:", choices = global_ui_choices$whose_provider_short),
                selectInput(inputId="what_project", label="what_project:", choices = global_ui_choices$what_project_short, selected = global_ui_choices$what_project_short[1]),
