@@ -1,4 +1,4 @@
-# Shiny_popyramids
+# shiny_popyramids
 Popyramids mini-applications built with Shiny to explore the popyramids chichinabo database
 
 ## INSTALLATION
