@@ -1,26 +1,32 @@
-# shiny_popyramids
-Popyramids mini-applications built with Shiny to explore the popyramids chichinabo database
+shiny_popyramids
+================
+Popyramids mini-applications built with Shiny to explore a popyramids chichinabo database.
 
-## INSTALLATION
-Requirements: R, Shiny, PostgreSQL 9.3+, PostGIS, and a ready popyramids_db, containing stage, ods and dms schemas.
+Dockerfile
+------------
+Instructions for installation and deployment are detailed in the Dockerfile. A ready to run version is available at Docker Hub. Just run it as:
 
-Download and unzip this project into your Shiny app folder:
+    docker run -d -p 80:80 --name shiny_popyramids -d chichinabo/shiny_popyramids
 
-        curl 
-        unzip
-
-Install library libpq-dev
-        apt-get update
-        apt-get install libpq-dev
-
-
-Add permisions for installing new R packages on the fly:
-
-        chmod...
+Configuration
+-------------
 Change the dummy values in the pgconnection.R file to your database parameters:
 
-        global_user<-"user"
-        global_password<-"password"
-        global_host<-"localhost"
-        global_port<-"5432"
-        global_dbname<-"dbname"
+        global_user<-"postgres"
+        global_password<-"postgres"
+        global_host<-"172.0.0.1"
+        global_port<-"5433"
+        global_dbname<-"popyramids_db"
+
+Future work
+------------
+* New functionalities:
+  * JSONB document store.
+  * Pyramids cache.
+  * Multilanguage.
+* Improve features:
+  * Simplified apps and charts.
+  * RESTful integration. This will make the pgconnection.R file unnecessary.
+* Data:
+  * Compile a detailed list of available sources (URLs with RESTful APIs).
+  * ETL, Foreign Data Wrappers (FDW), etc
