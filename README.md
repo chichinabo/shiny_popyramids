@@ -1,6 +1,6 @@
 shiny_popyramids
 ================
-Popyramids mini-applications built with Shiny to explore a popyramids chichinabo database.
+Shiny apps for exploring a popyramids database.
 
 Dockerfile
 ------------
