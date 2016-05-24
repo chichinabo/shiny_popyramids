@@ -1,5 +1,5 @@
 global_user<-"postgres" 
 global_password<-"postgres" 
-global_host<- "localhost"
+global_host<- "172.17.0.1"
 global_port<-"5433" 
 global_dbname<-"popyramids_db"
